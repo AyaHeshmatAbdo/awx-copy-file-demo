@@ -1,0 +1,18 @@
+- name: Copy file from AWX to remote server
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Create destination directory
+      file:
+        path: /aya_folder_des
+        state: directory
+        mode: '0755'
+
+    - name: Copy app.conf to remote server
+      copy:
+        src: files/app.conf
+        dest: /aya_folder_des/app.conf
+        owner: root
+        group: root
+        mode: '0644'
