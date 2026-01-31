@@ -11,7 +11,7 @@
 
     - name: Copy app.conf to remote server
       copy:
-        src: files/app.conf
+        src: ../files/app.conf
         dest: /aya_folder_des/app.conf
         owner: root
         group: root
